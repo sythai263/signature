@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Signature</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="display-signature">
+    <div id="signature">
+      <table style="font-family: Verdana, sans-serif;box-sizing: border-box;margin: 0;padding: 0; color: #000;">
+      <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+        <tr>
+          <td style="padding: 0px 0px 40px 10px; font-style: italic;">
+            <span>Best Regard, </span>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top: 1px solid #000;">
+            <table style="color: #1b7a45;box-sizing: border-box;margin: 20px;">
+              <tr>
+                <td style="padding-left: 10px;padding-right: 10px; border-right: 4px solid #1b7a45;padding: 10px;">
+                  <img width="150px" src="https://live.staticflickr.com/65535/53817788199_2672009b9e_o.png"
+                    alt="Logo Shuei">
+                </td>
+                <td style="padding-left: 10px;">
+                  <div
+                    style="padding: 5px; padding-left: 10px;font-size: 13px;font-weight: bold; letter-spacing: 2px;">
+                    <p id="name" style="margin: 0; font-family: Verdana, sans-serif;">Vy Nguyen (Ms.)</p>
+                  </div>
+                  <div style="padding: 5px; padding-left: 10px;text-transform: uppercase;letter-spacing: 2px;">
+                    <p id="position" style="margin: 0; font-family: Verdana, sans-serif; font-size: 11px;">business
+                      development manager</p>
+                  </div>
+
+                  <table style="font-family: Verdana, sans-serif; color: #1b7a45;font-size: 9px;letter-spacing: 1px;">
+                    <tr style="display: flex;flex-direction: row; padding: 0px 5px 0px 10px;align-items: center;">
+                      <td style="padding-right: 5px;">
+                        <img src="https://live.staticflickr.com/65535/53817702868_90b5e7e8d2_o.png" width="20px"
+                          height="20px" alt="phone icon" />
+                      </td>
+                      <td>
+                        <span id="phone">(+84) 966.929.648</span>
+                      </td>
+                    </tr>
+                    <tr style="display: flex;flex-direction: row; padding: 0px 5px 0px 10px;align-items: center;">
+                      <td style="padding-right: 5px;">
+                        <img src="https://live.staticflickr.com/65535/53817702903_182553c1cc_q.jpg" width="20px"
+                          height="20px" alt="email icon" />
+                      </td>
+                      <td>
+                        <a style="color: #1b7a45;text-decoration: inherit;"
+                          href="mailto:nguyen_le_ha_vy@shuei-infotech.net" id="email">
+                          nguyen_le_ha_vy@shuei-infotech.net</a>
+                      </td>
+                    </tr>
+                    <tr style="display: flex;flex-direction: row; padding: 0px 5px 0px 10px;align-items: center;">
+                      <td style="padding-right: 5px;">
+                        <img src="https://live.staticflickr.com/65535/53817896005_2cc9f284f7_q.jpg" width="20px"
+                          height="20px" alt="place icon" />
+                      </td>
+                      <td>
+                        <div>
+                          <span><b>Ha Noi Office: </b> Detech Tower 2, 107 Nguyen Phong Sac
+                            Street, Dich Vong Hau Ward, Cau Giay District, Ha Noi</span>
+                        </div>
+                        <div>
+                          <span> <b>HCM Office: </b> ACM Building, 96 Cao Thang Street, Ward 4,
+                            District 3, Ho Chi Minh City</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="p-5">
+    <div class="row g-3">
+      <div class="col-auto">
+        <input class="info form-control" type="text" id="i-name" placeholder="Name">
+      </div>
+      <div class="col-auto">
+        <input class="info form-control" type="text" id="i-position" placeholder="Position">
+      </div>
+      <div class="col-auto">
+        <input class="info form-control" type="text" id="i-phone" placeholder="Phone">
+      </div>
+      <div class="col-auto">
+        <input class="info form-control" type="text" id="i-email" placeholder="Email">
+        <div id="error-email" style="display: none;" class="alert alert-danger"></div>
+      </div>
+      <div class="col-auto">
+        <div id="error-email" style="display: none;" class="alert alert-danger" role="alert"></div>
+        <button id="copy-to-clipboard" class="btn btn-primary mb-3"> Copy to clipboard</button>
+        <div id="copy-success" style="display: none;" class="alert alert-success" role="alert"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+
+
+  <script lang="js">
+
+    $('#i-name').on('input', function (e) {
+      let name = $('#i-name').val();
+      $('#name').text(name);
+    })
+
+    $('#i-position').on('input', function (e) {
+      let position = $('#i-position').val();
+      $('#position').text(position);
+    })
+
+    $('#i-phone').on('input', function (e) {
+      let phone = $('#i-phone').val();
+      $('#phone').text(phone);
+    });
+
+    function validateEmail(email) {
+      var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      return email.match(validRegex);
+    }
+
+
+
+    $('#i-email').on('input', function (e) {
+      let email = $('#i-email').val();
+      if (email && !validateEmail(email)) {
+        $('#error-email').text('Email invalid!').attr('style', '');
+      } else {
+        $('#error-email').attr('style', 'display:none;');
+        $('#email').text(email);
+        $('#email').attr('href', `mailto:${email}`);
+      }
+    });
+
+    $('#copy-to-clipboard').click(function () {
+      var signatureHtml = $('#display-signature').html();
+
+      // Sử dụng Clipboard API để sao chép HTML
+      navigator.clipboard.write([
+        new ClipboardItem({
+          'text/html': new Blob([signatureHtml], { type: 'text/html' })
+        })
+      ]).then(function () {
+        $('#copy-success').text('error-email')
+          .attr('style', '')
+          .text('Copied to clipboard successfully!')
+          .fadeTo(5000, 500)
+          .slideUp(500, function () {
+            $("#copy-success").slideUp(500);
+          });
+
+      }).catch(function (error) {
+        alert('Failed to copy HTML: ', error);
+      });
+    });
+
+  </script>
+</body>
+
+</html>
